@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ForAdelina"
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:ForAdelina.ViewModels"
+        xmlns:oxy="http://oxyplot.org/wpf"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -42,13 +43,13 @@
         </StackPanel>
     <TabControl DockPanel.Dock="Right">
         <TabItem Header="Таблица">
-                <DataGrid>
+                <DataGrid ItemsSource="{Binding Points}">
 
                 </DataGrid>
             </TabItem>
         <TabItem Header="График">
-            
-        </TabItem>
+                <oxy:PlotView Model="{Binding Chart}"/>
+            </TabItem>
     </TabControl>
     </DockPanel>
 </Window>
